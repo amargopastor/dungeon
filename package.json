@@ -4,15 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint src/**/*.js",
-    "build": "parcel build index.html",
     "dev": "parcel index.html",
     "start": "parcel serve -p $PORT index.html"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/amargopastor/dungeon.git"
-  },
+  "repository": "git+https://github.com/amargopastor/dungeon.git",
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -20,7 +15,7 @@
   },
   "homepage": "https://github.com/amargopastor/dungeon#readme",
   "dependencies": {
-    "parcel": "^1.12.4"
+    "parcel": "1.12.3"
   },
   "devDependencies": {
     "eslint": "^7.16.0",

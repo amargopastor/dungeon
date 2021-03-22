@@ -57,12 +57,12 @@ window.onload = () => {
   // Eventos de teclado
   document.body.addEventListener("keydown", (e) => {
     actors.forEach(
-      (actor) => actor.keyboardEvent && actor.keyboardEvent(e.key)
+      (actor) => actor.keyboardEvent && actor.keyboardEvent(e.key),
     );
   });
   document.body.addEventListener("keyup", (e) => {
     actors.forEach(
-      (actor) => actor.keyboardEventUp && actor.keyboardEventUp(e.key)
+      (actor) => actor.keyboardEventUp && actor.keyboardEventUp(e.key),
     );
   });
 };

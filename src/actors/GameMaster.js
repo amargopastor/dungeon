@@ -7,7 +7,7 @@ const LVL = {
     heroSpeed: 50,
     heroNumber: 4,
     myDungeonMap: dungeonMap[1],
-    viewField: 250,
+    viewField: 500,
   },
   2: {
     heroSpeed: 70,

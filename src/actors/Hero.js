@@ -167,8 +167,8 @@ export class Hero {
   killSkeleton() {
     let distance = 0;
     distance = Math.sqrt(
-      Math.pow(this.position.x - myGameMaster.skeletonPosition.x, 2)
-      + Math.pow(this.position.y - myGameMaster.skeletonPosition.y, 2),
+      Math.pow(this.position.x - myGameMaster.skeletonPosition.x, 2) +
+        Math.pow(this.position.y - myGameMaster.skeletonPosition.y, 2),
     );
     if (distance < 15) {
       myGameMaster.isSkeletonDead = true;

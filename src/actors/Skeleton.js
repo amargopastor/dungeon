@@ -52,8 +52,13 @@ export class Skeleton {
       this.position.x - 20,
       this.position.y - 25,
       frameSize.x - 25,
-      frameSize.y - 25
+      frameSize.y - 25,
     );
+
+    // ctx.beginPath();
+    // ctx.arc(this.position.x, this.position.y, 3, 0, 2 * Math.PI);
+    // ctx.closePath();
+    // ctx.fill();
 
     this.time += delta;
     this.framePos = Math.floor(this.time * seq.numFrames) % seq.numFrames;
@@ -144,7 +149,7 @@ export class Skeleton {
       distance = 0;
       distance = Math.sqrt(
         Math.pow(this.position.x - ori.position.x, 2) +
-          Math.pow(this.position.y - ori.position.y, 2)
+          Math.pow(this.position.y - ori.position.y, 2),
       );
       // console.log(myChestManager.latestOpenedChest);
       if (distance < 30 && !ori.isChestOpen) {
@@ -190,7 +195,7 @@ export class Skeleton {
       this.position.y,
       myGameMaster.viewField,
       0,
-      2 * Math.PI
+      2 * Math.PI,
     );
     maskCtx.fill();
 
