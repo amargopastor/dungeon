@@ -1,0 +1,35 @@
+{
+  "name": "dungeon",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amargopastor/dungeon.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint src/**/*.ts",
+    "dev": "parcel index.html",
+    "start": "parcel serve -p $PORT index.html",
+    "build": "npm run clean && npm run ghbuild",
+    "ghbuild": "parcel build --dist-dir docs --public-url /dungeon index.html",
+    "clean": "rimraf docs dist"
+  },
+  "bugs": {
+    "url": "https://github.com/amargopastor/dungeon/issues"
+  },
+  "homepage": "https://github.com/amargopastor/dungeon#readme",
+  "dependencies": {
+    "@types/lodash": "^4.14.178",
+    "lodash": "^4.17.21",
+    "parcel": "^2.0.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.5.4"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.8.0",
+    "@typescript-eslint/parser": "^5.8.0",
+    "eslint": "^8.5.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.3"
+  }
+}
