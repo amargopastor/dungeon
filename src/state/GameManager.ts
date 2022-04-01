@@ -3,8 +3,8 @@ import { Level } from "../types/Level";
 
 const mode: Array<Level> = [
   {
-    foeSpeed: 50,
-    foeNumber: 4,
+    foeSpeed: 70,
+    foeNumber: 8,
     currentDungeonMap: mapsArray[0],
     viewField: 250,
   },

@@ -2,7 +2,7 @@
 import { Point } from "../types/Point";
 import { gameManager } from "../state/GameManager";
 
-const linkIMG = require("../../public/images/link.png");
+const foeIMG = require("../../public/images/skeleton.png");
 
 const POS: any = {
   0: {
@@ -46,16 +46,18 @@ export class Foe {
     this.foeSize = 10;
 
     this.spritesheet = new Image();
-    this.spritesheet.src = linkIMG;
+    this.spritesheet.src = foeIMG;
     this.sequences = [
-      { name: "still-down", numFrames: 1, ySeqPos: 0 },
-      { name: "still-left", numFrames: 1, ySeqPos: 1 },
-      { name: "still-up", numFrames: 1, ySeqPos: 2 },
-      { name: "still-right", numFrames: 1, ySeqPos: 3 },
-      { name: "moving-down", numFrames: 10, ySeqPos: 4 },
-      { name: "moving-left", numFrames: 10, ySeqPos: 5 },
-      { name: "moving-up", numFrames: 10, ySeqPos: 6 },
-      { name: "moving-right", numFrames: 10, ySeqPos: 7 },
+      { name: "still-down", numFrames: 2, ySeqPos: 2 },
+      { name: "still-left", numFrames: 2, ySeqPos: 1 },
+      { name: "still-up", numFrames: 2, ySeqPos: 0 },
+      { name: "still-right", numFrames: 2, ySeqPos: 3 },
+      { name: "still-dead", numFrames: 1, ySeqPos: 20 },
+      { name: "still-dance", numFrames: 5, ySeqPos: 14 },
+      { name: "moving-down", numFrames: 7, ySeqPos: 10 },
+      { name: "moving-left", numFrames: 7, ySeqPos: 9 },
+      { name: "moving-up", numFrames: 7, ySeqPos: 8 },
+      { name: "moving-right", numFrames: 7, ySeqPos: 11 },
     ];
 
     this.framePos = 0;
@@ -78,7 +80,7 @@ export class Foe {
 
   draw(delta: number, ctx: CanvasRenderingContext2D) {
     // if (gameManager.start) {}
-    const frameSize = { x: 120, y: 130 };
+    const frameSize = { x: 64, y: 64 };
     const seqName =
       this.speed.x === 0 && this.speed.y === 0
         ? `still-${this.currentSequence}`
@@ -93,31 +95,23 @@ export class Foe {
       frameSize.y * seq.ySeqPos,
       frameSize.x,
       frameSize.y,
-      this.position.x - 12,
-      this.position.y - 23,
-      frameSize.x - 95,
-      frameSize.y - 95,
+      this.position.x - 20,
+      this.position.y - 25,
+      frameSize.x - 25,
+      frameSize.y - 25
     );
-
-    // ctx.beginPath();
-    // ctx.arc(this.position.x, this.position.y, 3, 0, 2 * Math.PI);
-    // ctx.closePath();
-    // ctx.fill();
-
+    
     this.time += delta;
-    if (seq.numFrames === 1) {
-      this.framePos = Math.floor(this.time * 3) % seq.numFrames;
-    } else {
-      this.framePos = Math.floor(this.time * 10) % seq.numFrames;
-    }
+    this.framePos = Math.floor(this.time * seq.numFrames) % seq.numFrames;
 
     this.killHeroe();
   }
 
   update(delta: number) {
     if (gameManager.allChestsOpen) {
-      this.currentSequence = "down";
+      this.currentSequence = "dead";
       this.speed = { x: 0, y: 0 };
+      this.framePos = 5;
     } else {
       if (this.current_direction.length < 1) {
         this.setDirection();

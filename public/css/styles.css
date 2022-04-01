@@ -5,13 +5,17 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-}
 
-#canvas {
-	border: 1px solid red;
+	background-size: cover;
+    background-position: center;
+    box-sizing: border-box;
 }
 
 #canvasShadow {
 	z-index: 1;
 	position: absolute;
+}
+
+body{
+    background-image: url(../images/background.jpeg);
 }

@@ -1,10 +1,17 @@
 {
   "name": "dungeon",
   "version": "1.0.0",
+  "description": "Game created with Canvas and Typescript",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/amargopastor/dungeon.git"
   },
+  "keywords": [
+    "Dungeon",
+    "Canvas",
+    "Typescript"
+  ],
+  "author": "Marcos Iñigo Corral",
   "license": "MIT",
   "scripts": {
     "lint": "eslint src/**/*.ts",

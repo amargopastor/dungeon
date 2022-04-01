@@ -50,7 +50,7 @@ export class Hero {
     const seq: any = this.sequences.find((s: any) => s.name === seqName);
     if (!seq) throw new Error("invalid seq");
 
-    this.drawShadow(ctx);
+    // this.drawShadow(ctx);
 
     // void ctx.drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight);
     ctx.drawImage(
@@ -177,33 +177,33 @@ export class Hero {
     });
   }
 
-  drawShadow(ctx: CanvasRenderingContext2D) {
-    if (this.currentSequence === "dance") gameManager.viewField++;
-    // Create a canvas that we will use as a mask
-    const canvas: any = document.getElementById("canvas");
-    const maskCanvas: any = document.getElementById("canvasShadow");
-    // Ensure same dimensions
-    maskCanvas.width = canvas.width;
-    maskCanvas.height = canvas.height;
-    const maskCtx = maskCanvas.getContext("2d");
-    // This color is the one of the filled shape
-    maskCtx.fillStyle = "black";
-    // Fill the mask
-    maskCtx.fillRect(0, 38, maskCanvas.width, maskCanvas.height);
+  // drawShadow(ctx: CanvasRenderingContext2D) {
+  //   if (this.currentSequence === "dance") gameManager.viewField++;
+  //   // Create a canvas that we will use as a mask
+  //   const canvas: any = document.getElementById("canvas");
+  //   const maskCanvas: any = document.getElementById("canvasShadow");
+  //   // Ensure same dimensions
+  //   maskCanvas.width = canvas.width;
+  //   maskCanvas.height = canvas.height;
+  //   const maskCtx = maskCanvas.getContext("2d");
+  //   // This color is the one of the filled shape
+  //   maskCtx.fillStyle = "black";
+  //   // Fill the mask
+  //   maskCtx.fillRect(0, 38, maskCanvas.width, maskCanvas.height);
 
-    // Set xor operation
-    maskCtx.globalCompositeOperation = "destination-out";
-    // Draw the shape you want to take out
-    maskCtx.arc(
-      this.position.x,
-      this.position.y,
-      gameManager.viewField,
-      0,
-      2 * Math.PI
-    );
-    maskCtx.fill();
+  //   // Set xor operation
+  //   maskCtx.globalCompositeOperation = "destination-out";
+  //   // Draw the shape you want to take out
+  //   maskCtx.arc(
+  //     this.position.x,
+  //     this.position.y,
+  //     gameManager.viewField,
+  //     0,
+  //     2 * Math.PI
+  //   );
+  //   maskCtx.fill();
 
-    // Draw mask on the image, and done !
-    ctx.drawImage(maskCanvas, 0, 0);
-  }
+  //   // Draw mask on the image, and done !
+  //   ctx.drawImage(maskCanvas, 0, 0);
+  // }
 }
