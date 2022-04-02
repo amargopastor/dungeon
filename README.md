@@ -41,7 +41,7 @@ To download and start the project you need to run the following commands:
 git clone https://github.com/amargopastor/dungeon.git
 
 # Move into it
-cd timberman-ts
+cd dungeon
 
 # Install all the necessary dependencies (you can check them in the package.json)
 yarn install
