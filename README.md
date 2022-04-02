@@ -14,12 +14,12 @@
 ## Table of Contents
 
 1. [Technologies](#technologies)
-1. [About the game](#about_the_game)
-1. [Set Up](#set_up)
-1. [Commands Availables](#commands_availables)
+1. [About the game](#about-the-game)
+1. [Set Up](#set-up)
+1. [Commands Availables](#commands-availables)
 1. [Keymap](#keymap)
-1. [Project tree](#project_tree)
-1. [Honorable mentions](#project_tree)
+1. [Project tree](#project-tree)
+1. [Honorable mentions](#project-tree)
 
 # Technologies
 
